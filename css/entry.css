@@ -1,0 +1,65 @@
+/*
+Global Styles
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+/*
+Element-level styles
+*/
+
+h1 {
+  color: tomato;
+}
+
+body {
+  font-family: tahoma;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 800px;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
+  border-color: steelblue;
+}
+
+label {
+  color: darkolivegreen;
+  padding-top: .75rem;
+}
+
+textarea {
+  height: 6rem;
+}
+
+/*
+ID selected styles
+*/
+
+#build-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#amount {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 50px;
+}
+
+#measure {
+  flex-basis: 0;
+  flex-grow: 2;
+}
+
+#item {
+  flex-basis: 0;
+  flex-grow: 10;
+}
