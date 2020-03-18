@@ -9,26 +9,6 @@ Global Styles
 /*
 Element-level styles
 */
-
-h1 {
-  color: tomato;
-}
-
-body {
-  font-family: tahoma;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  max-width: 800px;
-  margin: auto;
-  border-style: solid;
-  border-width: 1px;
-  border-color: steelblue;
-}
-
 aside {
   display: flex;
   flex-direction: column;
@@ -40,9 +20,42 @@ aside {
   border-color: steelblue;
 }
 
+body {
+  background-color: PapayaWhip;
+  font-family: tahoma;
+}
+
+h1 {
+  color: tomato;
+  margin-left: 10rem;
+  font-family: 'Padauk', sans-serif;
+
+}
+
+header {
+  display: flex;
+  background: linear-gradient(salmon, PapayaWhip);
+}
+
 label {
   color: darkolivegreen;
   padding-top: .75rem;
+}
+
+main {
+  font-family: 'Padauk', sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 800px;
+  margin-left: 13rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: steelblue;
+}
+
+nav {
+  margin-left: 10rem;
 }
 
 textarea {
@@ -82,3 +95,7 @@ Class selected styles
 .item-group {
   margin-right: 4px;
 }
+
+/*
+Media Selectors
+*/

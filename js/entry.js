@@ -4,9 +4,13 @@
 // Functions
 function echoTitle () {
      //alert(recipeName.value);
+  const titleAside          = document.querySelector('#title-echo');
+  if (titleAside.hasChildNodes()) {
+    titleAside.innerHTML  = '';
+  }
   const titlePara           = document.createElement('p');
   titlePara.innerText       = recipeName.value;
-  const titleAside          = document.querySelector('#title-echo');
+  //const titleAside          = document.querySelector('#title-echo');
   titleAside.appendChild(titlePara);
 }
 
@@ -20,7 +24,7 @@ function addIngredient () {
   itemPara.innerText      = newItem;
 //debugger;
   document.querySelector('#amount').value           = "";
-  document.querySelector('#measure').selectedIndex  = 0;
+  document.querySelector('#measure').selectedIndex  = 1;
   document.querySelector('#item').value             = "";
 
   ingDiv.appendChild(itemPara);
