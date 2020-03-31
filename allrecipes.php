@@ -76,7 +76,7 @@ $granola_muffins->addInstruction("Combine wet and dry mixtures and fold together
 $granola_muffins->addInstruction("*An hour before you want to make these (or at least a half hour) mix your milk of choice with the white vinegar and allow it to \"sour\" at room temperature.");
 
 $granola_muffins->setYield("12 large muffins.");
-$granola_muffins->addTag("breakfast, snack, quick bread");/**/
+$granola_muffins->addTag("breakfast, snack, quick bread");
 
 
 $belgian_waffles = new Recipe("Belgian Waffles");

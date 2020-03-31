@@ -48,13 +48,13 @@ class Recipe
       exit("Both item and note cannot be left blank");
     }
     //test if the incoming measure is valid
-    if ($measure != null) {
+    if ($amount != null) {
       $amount  = $this -> clean_measure($amount);
     }
     $this -> ingredients[] = array(
-      "item"    => ucwords($item),
+      "item"    => strtolower($item),
       "amount"  => $amount,
-      "measure" => $measure,
+      "measure" => strtolower($measure),
       "note"    => $note
     );
   }
@@ -103,6 +103,9 @@ class Recipe
     return $this -> source;
   }
 
+  //changes decimals to fractions where possible
+  //accepts the amount, separates the decimal from the whole number
+  //then converts the decimal to a display fraction and reassembles both.
   private function clean_measure ($amount)
   {
     $whole  = 0;
@@ -117,26 +120,38 @@ class Recipe
 
     switch ($frac) {
       case .5:
-        $amount = $whole . "&#189;";
+        $amount = self::assembleMeasure($whole, "&#189;");
         break;
       case .25:
-        $amount = $whole . "&#188;";
+        $amount = self::assembleMeasure($whole, "&#188;");
         break;
       case .75:
-        $amount = $whole . "&#190;";
+        $amount = self::assembleMeasure($whole, "&#190;");
         break;
       case .3:
-        $amount = $whole . "&#8531";
+        $amount = self::assembleMeasure($whole, "&#8531");
         break;
       case .33:
-        $amount = $whole . "&#8531";
+        $amount = self::assembleMeasure($whole, "&#8531");
         break;
       case 0.6:
-        $amount = $whole . "&#8532;";
+        $amount = self::assembleMeasure($whole, "&#8532;");
+        break;
       case 0.66:
-        $amount = $whole . "&#8532;";
+        $amount = self::assembleMeasure($whole, "&#8532;");
     }
+
     return $amount;
+  }
+
+  //helper function to keep the switch statement in clean_measure() from getting too complex.
+  private static function assembleMeasure ($w, $f)
+  {
+    if ($w == 0) {
+      return $f;
+    } else {
+      return ($w . $f);
+    }
   }
 }
 ?>
